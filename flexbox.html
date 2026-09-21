@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLEXBOX PRICING CARDS</title> 
+    <link rel="Luxurious script" href="https://fonts.google.com/specimen/Luxurious+Script?preview.script=Latn">
+    <link rel="Luxurious script" href="https://fonts.google.com/?preview.script=Latn&query=cinzel">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+    :root {
+      --bg-dark-gradient: linear-gradient(135deg,black 0%, black 100%);
+      --card-bg-dark: black;
+      --card-bg-featured: black;
+      --text-primary: white;
+      --text-muted: lightgray;
+      --gold-accent: gold;
+    --gold-gradient: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body{
+        font-family: 'Times New Roman', Times, serif;
+        background: linear-gradient(135deg, #090a0f 0%, #121520 100% );
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        }
+    .pricing-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch; 
+        gap: 25px;
+        width: 100%;
+        max-width: 1100px;
+        flex-wrap: wrap;
+        padding: 0 20px;
+    }
+    .perfume-card {
+
+     background-color: black;
+     border: 1px solid rgba(212, 175, 55, 0.15); 
+     border-radius: 6px;
+     overflow: hidden;
+     position: relative;
+     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+     flex: 1 1 320px;
+     display: flex;
+     flex-direction: column;
+    }
+    .image-wrapper {
+     position: relative;
+     width: 100%;
+     height: 230px;
+     overflow: hidden;
+     background-color: black;
+    }
+    .image-wrapper img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;        
+     object-position: center;   
+     display: block;
+    }
+
+    .price-tag {
+     position: absolute;
+     bottom: 15px;
+     right: 15px;
+     background-color: black;
+     backdrop-filter: blur(4px);
+     border: 1px solid gold;
+     color: gold;
+     font-weight: 600;
+     font-size: 1.15rem;
+     padding: 6px 14px;
+     border-radius: 2px;
+     z-index: 10;
+    }
+    .card-content {
+     padding: 30px 25px;
+     text-align: center;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     flex-grow: 1;
+    } 
+
+.perfume-title {
+  color: #ffffff;         
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.scent-notes {
+  list-style: none;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.scent-notes li {
+  color: #d4af37 ;         
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+  text-align:center;
+  position: relative;
+}
+.scent-notes li::before {
+    content:"♦ " ;
+    display: inline;
+    color: var(--gold-accent);
+    font-size: 0.75rem;
+    vertical-align: middle;
+}
+
+.description {
+  color: #a0aec0 ;         
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-weight: 300;
+  flex-grow: 1;
+}
+
+.purchase-btn {
+  width: 100%;
+  background: transparent ; 
+  color: #ffffff ;         
+  border: 1px solid #ffffff ; 
+  padding: 12px 0;
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.purchase-btn:hover {
+  background: #ffffff ;
+  color: #000000 ;
+}
+
+.perfume-card.featured {
+        background-color: var(--card-bg-featured);
+        border: 1px solid var(--gold-accent);
+    }
+    
+.featured-btn {
+  background: linear-gradient(135deg, #bf953f 0%, #fcf6ba 25%, #b38728 50%, #fbf5b7 75%, #aa771c 100%);
+  border: none ;
+  color: #000000 ;
+  font-weight: 600;
+}
+
+.featured-btn:hover {
+  background: #ffffff ;
+  color: #000000 ;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+.perfume-card:hover {
+    transform: translateY(-10px);
+    border-color: #d4af37;
+     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 
+              0 0 22px rgba(212, 175, 55, 0.25);
+}
+.signature-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 30 ; 
+    background: var(--gold-gradient);
+    color: #000000 ;
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 6px 14px;
+    border-radius: 2px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    display: block ;
+}
+
+
+    </style>
+    <main class="pricing-container">
+        <section class="perfume-card">
+            <div class="image-wrapper">
+                <span class="price-tag">$120 </span>
+                    <img src="C:\Users\ADMIN\OneDrive\Desktop\Mern Stack\front end\CSS\coco perfume.avif" alt="coco noir chanel">
+            </div>
+
+            <div class="card-content">
+                <h2 class="perfume-title">COCO NOIR CHANEL</h2>
+                <ul class="scent-notes">
+                    <li>Sandalwood</li>
+                    <li>Leather</li>
+                    <li>Patchouli</li> 
+                    <li>Tonka Bean</li>
+                    <li>Vanille</li>
+                 </ul>
+                 <br>
+            <p class="description">A Modern amber-woody fragrance for women that blends luminous citrus with a deep, sensual floral and resinous core</p>
+            <button class="purchase-btn"> SELECT FRAGRANCE </button>
+            </div>
+
+
+        </section>
+
+        <section class="perfume-card featured">
+            <div class="signature-badge">Bestseller</div>
+            <div class="image-wrapper">
+                <span class="price-tag">$185</span>
+                <img src="C:\Users\ADMIN\Downloads\n5 perfume.avif">
+
+            </div>
+        <div class="card-content">
+            <h2 class="perfume-title">N5 Chanel eau de</h2>
+            <ul class="scent-notes">
+                <li>Bright Aldehydes</li>
+                <li>Exotic Ylang-Ylang</li>
+                <li>Neroli</li>
+                <li>Hint of juicy Peach</li>
+            </ul>
+            <br>
+            <p class="description">Chanel N°5 is a timeless, sophisticated fragrance that blends sparkling, clean aldehydes with a rich heart of jasmine and rose over a warm, powdery woody base.</p>
+            <button class="purchase-btn featured-btn">ACQUIRE SIGNATURE</button>
+        </div>
+        </section>
+
+        <section class="perfume-card">
+            <div class="image-wrapper">
+                <span class="price-tag">$145</span>
+                    <img src="C:\Users\ADMIN\Downloads\laurissi perfume.avif">
+            </div>
+
+        <div class="card-content">
+            <h2 class="perfume-title">L'Eau Laurissi</h2>
+            <ul class="scent-notes">
+                <li>A warm</li>
+                <li>mysterious</li>
+                <li>Creamy Vanilla</li>
+                <li>Rich Incienso</li>
+            </ul>
+            <br>
+            <p class="description">Handcrafted niche perfume that blends clean white tea and powdery rice with soft cherry blossom over a warm vanilla and incense base</p><br>
+            <button class="purchase-btn">SELECT FRAGRANCE</button>
+        </div>
+        </section>
+    </main>
+</body>
+</html>
